@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="ar" dir="rtl" data-hadeel-bot="1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>بوت JawlahForHadeel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120a1f;--c:#1e1233;--l:#3a2557;--p:#9333ea;--t:#f6f1ff;--m:#a999c8}
+*{box-sizing:border-box;margin:0}[hidden]{display:none!important}
+body{font-family:Cairo,system-ui,sans-serif;background:radial-gradient(circle at 50% -10%,#3d1b6e,var(--bg) 60%) fixed;color:var(--t);min-height:100vh;padding:16px}
+.w{max-width:1000px;margin:0 auto}.c{background:var(--c);border:1px solid var(--l);border-radius:16px;padding:16px;margin-top:12px}
+.r{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.m{color:var(--m);font-size:13px}
+button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:8px 14px;background:var(--p);color:#fff;font-weight:700}
+button.g{background:#2a1a45;border:1px solid var(--l)}button.on{background:#16a34a}.tabs button{background:#2a1a45}.tabs button.a{background:var(--p)}
+input,textarea,select{font:inherit;padding:8px 10px;border-radius:10px;border:1px solid var(--l);background:#150c25;color:var(--t);max-width:100%}
+input[type=number]{width:90px}input[type=checkbox]{width:auto;margin-inline-end:6px}textarea{width:100%}
+table{width:100%;border-collapse:collapse;margin-top:10px}td,th{padding:6px;border-bottom:1px solid #2a1a45;text-align:right;font-size:14px}
+.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:12px}.f label{display:block;font-size:13px;color:var(--m)}.f input:not([type=checkbox]),.f textarea{width:100%;margin-top:4px}
+</style></head><body><div class="w">
+<div class="c" id="ext" style="border-color:#b45309;margin:0 0 12px">⚠️ الموقع مش متوصّل بإضافة Bridge. ثبّتي الإضافة من فولدر Bridge وفعّلي لها «Allow access to file URLs» ثم حدّثي الصفحة (F5).</div>
+<div class="r" style="justify-content:space-between"><h2>🤖 بوت JawlahForHadeel</h2><span class="m">تطوير: khaleditachi · v16</span></div>
+<div class="c r"><b>البوت: <span id="bn">—</span></b><button class="g" id="ed" title="تغيير البوت">✏️</button><span style="flex:1"></span><input id="ch" placeholder="اسم قناة البث" style="direction:ltr;width:170px"><button id="on">▶ تشغيل البوت</button></div>
+<div class="c" id="tkp" hidden><div class="m" style="margin-bottom:8px">لتغيير اسم البوت قم بوضع توكن الحساب الذي تريده روبوتاً للدردشة، وسيظهر اسمه بعد الحفظ. اتركيه فاضي لاستخدام حساب Kick المسجّل دخوله في المتصفح.</div><div class="r"><input id="tk" placeholder="التوكن" style="flex:1;direction:ltr"><button id="tks">حفظ</button></div></div>
+<div class="c m">⏱ التوزيع القادم بعد: <b id="cd" style="color:#c084fc">--:--</b> · المسجلين في الدورة: <b id="np">0</b></div>
+<div class="r tabs" style="margin-top:12px"><button data-tab="gen" class="a">⚙️ عام</button><button data-tab="shop">🛒 المتجر</button><button data-tab="usr">👥 المستخدمين</button><button data-tab="tim">⏰ المؤقتات</button><button data-tab="log">📜 السجل</button></div>
+<div class="c" id="t-gen">
+ <div class="f"><label>نقاط كل 5 دقائق<input type="number" data-g="pi"></label><label>مدة الدورة (دقيقة)<input type="number" data-g="wmin"></label><label>XP لكل تعليق<input type="number" data-g="xp"></label><label>الانتظار بين كل XP (ثانية)<input type="number" data-g="xcd"></label></div>
+ <div class="f"><label><input type="checkbox" data-g="wOn">رسالة الترحيب بأول تعليق ($(name) = اسم الشخص)<textarea data-g="tw" rows="2"></textarea></label><label><input type="checkbox" data-g="fOn">رسالة شكر المتابعة<textarea data-g="tf" rows="2"></textarea></label><label>XP المطلوب لكل مستوى (رقم في كل سطر، السطر 1 = الوصول للمستوى 2)<textarea data-g="lv" rows="6"></textarea></label></div>
+ <p class="m">أوامر الجمهور: !نقاطي · !متجر · !شراء اسم المنتج</p></div>
+<div class="c" id="t-shop" hidden><div class="r"><input id="sn" placeholder="اسم المنتج"><input id="sp" type="number" placeholder="السعر"><input id="sq" type="number" placeholder="الكمية"><input id="sl" type="number" placeholder="أقل مستوى" value="1"><button id="sa">+ إضافة</button></div><div id="stb"></div><h3 style="margin-top:14px">🧾 آخر المشتريات</h3><div id="sby" class="m"></div></div>
+<div class="c" id="t-usr" hidden><div class="r"><input id="uq" placeholder="بحث بالاسم"><button class="g" id="ur">تحديث</button></div><div id="ut"></div></div>
+<div class="c" id="t-tim" hidden><textarea id="tmsg" rows="2" placeholder="نص الرسالة المؤقتة"></textarea><div class="r" style="margin-top:8px"><input id="tv" type="number" value="10" min="1"><select id="tu"><option value="m">دقيقة</option><option value="h">ساعة</option></select><span class="m">من 5 دقائق إلى 24 ساعة</span><button id="ta">+ إضافة مؤقت</button></div><div id="ttb"></div></div>
+<div class="c" id="t-log" hidden></div>
+</div><script src="bot.js"></script></body></html>
